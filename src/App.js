@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import TheStore from './Components/TheStore'
-import Login from './Components/Login/'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'  
+import TheStore from './Components/TheStore';
+import Login from './Components/Login/';
+import Cart from './Components/Cart';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props){
@@ -15,6 +16,7 @@ class App extends React.Component {
      <Switch>
        <Route exact={true} path='/' component={Login} />
        <Route exact={true} path="/TheStore" component={TheStore}/>
+       <Route exact={true} path="/Cart" component={Cart}/>
       </Switch>
    </Router>
   );
@@ -22,3 +24,4 @@ class App extends React.Component {
 }
 
 export default App;
+

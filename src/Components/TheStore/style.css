@@ -9,13 +9,13 @@
 
 .store{
     display: flex;
-    height: 870px;
-    width: 700px;
+    height: 1200px;
+    width: 950px;
     /* border: solid 2px black; */
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
-    background-color: rgba(170, 169, 247, 0.39);
+    /* background-color: rgba(170, 169, 247, 0.39);  */
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -23,12 +23,16 @@
 }
 
 .box{
-    height: 270px;
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    width: 280px;
     /* border: red solid 2px; */
     background-color: white;
+    background-color: rgb(239, 239, 239);
+    box-shadow: 3px 3px 10px  rgb(48, 46, 46)
 }
-
 
 .header{
     display: flex;
@@ -49,16 +53,57 @@
     margin-left: 94%;
     cursor: pointer;
     position: absolute;
+    
 }
 
 .input-div{ 
     display: flex;
+    height: 30px;
+    width: 40px;
+    background-color: white;
     align-items: center;
     margin-left: 90%;
     position: absolute;
+    border: black solid 1px;
+    justify-content: center;
+    align-items: center;
+
    
 }
 
-.input-fild{
-    width: 20px;
+.t-shirt{
+    width: 230px;
+    height: 270px;
+}
+
+#add-to-cart{
+    
+    position: absolute;
+    margin-top: 290px;
+    margin-left: 180px;
+    cursor: pointer;
+   
+}
+
+#color-cart{
+    color: black;
+}
+
+.price{
+    position: absolute;
+    margin-top: 320px;
+}
+
+#add-shirt{
+    position: absolute;
+    margin-right: 120px;
+    margin-top: 288px;
+    cursor: pointer;
+}
+
+#remove-shirt{
+    position: absolute;
+    margin-right: 120px;
+    margin-top: 325px;
+    cursor: pointer;
 }
