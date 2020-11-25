@@ -11,24 +11,26 @@ class TheStore extends React.Component {
         super(props)
     }
     addToCartHandler(elem) {
-
         this.props.dispatch({ type: "ADD_TO_CART", payload: elem })
+        this.props.dispatch({ type: "PRICE", payload: elem.price })
     }
 
-    incrementQuantity() {
+    incrementQuantity(elem) {
 
-        this.props.dispatch({type:"INCREMENT_TO_QUANTITY"});
-
+        this.props.dispatch({ type: "INCREMENT_TO_QUANTITY" });
+        this.props.dispatch({ type: "ADD_TO_CART", payload: elem })
+        this.props.dispatch({ type: "PRICE", payload: elem.price })
     }
 
     decrementQuantity() {
 
-        this.props.dispatch({type:"DECREMENT_TO_QUANTITY"});
+        this.props.dispatch({ type: "DECREMENT_TO_QUANTITY" });
+
 
     }
 
     render() {
-        console.log("second",this.props)
+        console.log("second", this.props)
         return (
             <div>
                 <div className="header">
@@ -49,7 +51,7 @@ class TheStore extends React.Component {
                                 return <div className='box' key={elem.key}>
                                     <img className="t-shirt" src={elem.data} />
                                     <i className="fas fa-plus-circle fa-2x" id="add-to-cart" onClick={(e) => { this.addToCartHandler(elem) }} />
-                                    <i class="fas fa-angle-up" id="add-shirt" onClick={(e) => { this.incrementQuantity() }}></i>
+                                    <i class="fas fa-angle-up" id="add-shirt" onClick={(e) => { this.incrementQuantity(elem) }}></i>
                                     <i class="fas fa-angle-down" id="remove-shirt" onClick={(e) => { this.decrementQuantity() }}></i>
                                     <p className="price">{elem.price}</p>
                                 </div>
